@@ -25,11 +25,11 @@ class BottomNavBar extends StatelessWidget {
                   items: [
                     BottomNavigationBarItem(
                       icon: Icon(Icons.home_filled),
-                      label: AppText.index,
+                      //  label: AppText.index,
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.calendar_month_outlined),
-                      label: AppText.calendar,
+                      //  label: AppText.calendar,
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.person_outline_sharp),

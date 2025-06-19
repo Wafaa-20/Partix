@@ -29,32 +29,60 @@ parts around you.""";
   static const String hintmobileNumber = "Enter mobile number";
 
   //Home
-  static const String index = "Index";
-  static const String doToday = "What do you want to do today?";
-  static const String doTodaySubtitle = "Tap + to add your tasks";
-  //Bottom nav bar
-  static const String calendar = "Calendar";
+  static const String location = "Location";
+  static const String locationdescribe = "Add your Location";
+  static const String search = "Search";
+  //Tab Bar
+  static const String all = "All";
+  static const String monitor = "Monitor";
+  static const String pcParts = "Pc Parts";
+  static const String accessories = "Accessories";
+  static const String gamingPC = "Gaming PC ";
+  //monitor card
+  static const String monitor1Title = "LG 27 FHD Monitor";
+  static const String monitor1Price = "439.0 SR";
+  static const String monitor2Title = "32 Odyssey G5";
+  static const String monitor2Price = "6,999.00 SR";
+  static const String monitor3Title = "Odyssey G9";
+  static const String monitor3Price = "4,599.00 SR";
+  static const String monitor4Title = "LG 27 FHD Monitor";
+  static const String monitor4Price = "7,399.00 SR";
+  //monitor detail
+  static const String monitor1DetailTitle =
+      "32 Odyssey G5 G55C QHD 165Hz Curved Gaming Monitor";
+  static const String monitor1SubTitle =
+      """165Hz QHD Display – Ultra-smooth visuals
+ with sharp resolution.""";
+  static const String monitor1Size = "Size: 32 QHD Curved (1000R)";
+  static const String monitor1Rate = "Refresh Rate: 165Hz";
+  static const String monitor1Response = "Response Time: 1ms (MPRT)";
+  static const String monitor1Sync = "Sync Tech: AMD FreeSync + HDR10";
+  //Card
+  static const String cart = "Cart";
+  static const String addedToCart = "Added to Cart";
+  static const String cardPageEmpty = "The Cart is empty";
+  //Payment
+  static const String payment = "Payment";
+  static const String shippingAddress = "Shipping Address";
+  static const String paymentMethod = "Payment Method";
+  static const String card1 = "Apple Pay";
+  static const String card2 = "Credit Card";
+  static const String orderSummary = "Order Summary";
+  //Card
+  static const String favorites = "Favorites";
+  static const String favoritesPageEmpty = "Favorites list is empty";
+  //Profile
   static const String profile = "Profile";
-  //Bottom Sheet
-  static const String task = "Add Task";
-  static const String hintTask = "Do math homework";
-  static const String description = "Description";
-  static const String hintDescription = "Do chapter 2 to 5 for next week";
-
-  //Flag
-  static const String priority = "Task Priority";
-  static const String cancel = "Cancel";
-  static const String save = "Save";
-  static const String time = "Choose Time";
-
-  //Category Screens
-  static const String category = "Create new category";
-  static const String categoryName = "Category name :";
-  static const String hintCategory = "Category name";
-  static const String categoryIcon = "Category icon :";
-  static const String library = "Choose icon from library";
-  static const String categoryColor = "Category color :";
-  static const String create = "Create Category";
-  static const String addCategory = "Add Category";
-  static const String chooseCategory = "Choose Category";
+  static const String accountProfile = "Account";
+  static const String accountProfileSubtitle = "Email, birthday, country";
+  static const String orders = "Orders";
+  static const String ordersSubtitle = "My orders";
+  static const String profileAdress = "Payment & Addresses";
+  static const String profileAdressSubtitle =
+      "Saved payment methods, saved addresses";
+  static const String preferences = "Preferences";
+  static const String preferencesSubtitle = "Push notifications, theme";
+  static const String support = "Support & Legal";
+  static const String supportSubtitle = "Help center, privacy policy & terms";
+  static const String logout = "Logout";
 }
