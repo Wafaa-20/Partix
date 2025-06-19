@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AppPalette {
+  static const blueColor = Color(0xFF0F044C);
+  static const blueColor2 = Color(0xFF0B2F46);
+  static const blueColor3 = Color(0xFF141E61);
   static const blackColor = Color(0xFF121212);
-  static const lightBlack = Color(0xFF1D1D1D);
-  static const lightBlack2 = Color(0xFF363636);
-  static const lightBlack3 = Color(0xFF272727);
   static const whiteColor = Colors.white;
-  static const white44 = Color(0x70FFFFFF);
-  static const white67 = Color(0xAAFFFFFF);
-  static const grayColor = Color(0xFFAFAFAF);
-  static const lightGray = Color(0xFF535353);
-  static const lightGray2 = Color(0xFF979797);
-
-  static const purpleColor = Color(0xFF8875FF);
-  static const lightPurple = Color(0xFF8687E7);
+  static const whiteLight = Color(0xffFFFDFD);
+  static const whiteLight2 = Color(0xffEEEEEE);
+  static const grayLight = Color(0xFFAAAAAA);
+  static const grayColor = Color(0xFF787A91);
+  static const grayColor2 = Color(0xFF585858);
+  static const orangeColor = Color(0xFFFF6500);
 }

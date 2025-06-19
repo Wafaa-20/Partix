@@ -1,39 +1,32 @@
 class AppText {
-  static const String upTodo = "UpTodo";
+  static const String partix = "Partix";
   //Onboarding
-  static const String title1 = "Manage your tasks";
-  static const String subTitle1 =
-      """You can easily manage all of your daily tasks in DoMe for free""";
-  static const String title2 = "Create daily routine";
-  static const String subTitle2 =
-      """In Uptodo  you can create your personalized routine to stay productive""";
-  static const String title3 = "Orgonaize your tasks";
-  static const String subTitle3 =
-      """You can organize your daily tasks by adding your tasks into separate categories""";
+  static const String title1 = "Welcome to Partix";
+  static const String subTitle1 = """Your go-to app for PC parts, laptops, 
+and custom builds.""";
+  static const String title2 = "Easy to Use";
+  static const String subTitle2 = """Browse, connect, and get what you need ,
+fast and smooth.""";
+  static const String title3 = "Let’s Start";
+  static const String subTitle3 = """Jump in and explore the best, 
+parts around you.""";
   static const String next = "NEXT";
   static const String skip = "SKIP";
   static const String back = "BACK";
-  static const String start = "Get Started";
-
-  //Start Screen
-  static const String welcome = "Welcome to Uptodo";
-  static const String welcomeSubTitle =
-      """Please login to your account or create new account to continue""";
-  static const String login = "Login";
-  static const String login2 = "LOGIN";
-  static const String createAccount = "CREATE ACCOUNT";
-
+  static const String start = "Start";
   //Login Screen
-  static const String username = "Username";
-  static const String hintUsername = "Enter your Username";
+  static const String login = "Login";
+  static const String email = "Email";
+  static const String hintEmail = "Enter the email";
   static const String password = "Password";
-  static const String account = "Don’t have an account?";
+  static const String hintPassword = "Enter the password";
+  static const String forgotPassword = "Forgot your password?";
+  static const String account = "You do not have an account?";
 
   //SignUp Screen
-  static const String confirm = "Confirm Password";
-  static const String hintPassword = "● ● ● ● ● ● ● ● ● ● ● ●";
-  static const String register = " Register";
-  static const String haveAccount = "Already have an account?";
+  static const String signUp = "sign up";
+  static const String mobileNumber = "Mobile number";
+  static const String hintmobileNumber = "Enter mobile number";
 
   //Home
   static const String index = "Index";

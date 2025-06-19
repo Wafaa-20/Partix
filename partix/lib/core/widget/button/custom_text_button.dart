@@ -21,7 +21,7 @@ class CustomTextButton extends StatelessWidget {
       child: Text(
         text,
         style:
-            styles ?? TextStyles.lato40016.copyWith(color: AppPalette.white44),
+            styles ?? TextStyles.lato40016.copyWith(color: AppPalette.whiteColor),
       ),
     );
   }
