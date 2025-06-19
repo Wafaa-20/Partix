@@ -1,46 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:partix/core/theme/app_palette.dart';
 
 class TextStyles {
-  static final lato70040 = GoogleFonts.lato(
-    fontWeight: FontWeight.w700,
-    fontSize: 40,
-    color: AppPalette.whiteColor,
-  );
-  static final lato70032 = GoogleFonts.lato(
-    fontWeight: FontWeight.w700,
-    fontSize: 32,
-    color: AppPalette.whiteColor,
-  );
-  static final lato70020 = GoogleFonts.lato(
-    fontWeight: FontWeight.w700,
-    fontSize: 20,
-    color: AppPalette.whiteColor,
-  );
-  static final lato70016 = GoogleFonts.lato(
-    fontWeight: FontWeight.w700,
-    fontSize: 16,
-    color: AppPalette.whiteColor,
-  );
-  static final lato40020 = GoogleFonts.lato(
+  static const String _fontFamily = 'SFPro';
+  static final sepro40015 = TextStyle(
+    fontFamily: _fontFamily,
     fontWeight: FontWeight.w400,
-    fontSize: 20,
+    fontSize: 15,
+    color: AppPalette.grayLight,
+  );
+  static final sepro40028 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w400,
+    fontSize: 28,
     color: AppPalette.whiteColor,
   );
-  static final lato40016 = GoogleFonts.lato(
+  static final sepro70040 = TextStyle(
+    fontFamily: _fontFamily,
     fontWeight: FontWeight.w400,
-    fontSize: 16,
+    fontSize: 15,
     color: AppPalette.whiteColor,
   );
-  static final lato40014 = GoogleFonts.lato(
-    fontWeight: FontWeight.w400,
-    fontSize: 14,
+  static final sepro50017 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w500,
+    fontSize: 17,
     color: AppPalette.whiteColor,
   );
-  static final lato40012 = GoogleFonts.lato(
-    fontWeight: FontWeight.w400,
-    fontSize: 12,
-    color: AppPalette.whiteColor,
+  static final sepro60036 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w600,
+    fontSize: 36,
+    color: AppPalette.blueColor,
   );
 }
