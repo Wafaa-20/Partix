@@ -4,15 +4,14 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:partix/core/service/local_storage.dart';
-import 'package:partix/features/onboarding/presentation/bloc/onboarding_state.dart';
 
 part 'onboarding_event.dart';
-//part 'onboarding_state.dart';
+part 'onboarding_state.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final PageController controller = PageController();
   int currentPage = 0;
-  final getItData = GetIt.I.get<LocalStorage>();
+  // final getItData = GetIt.I.get<LocalStorage>();
 
   OnboardingBloc() : super(OnboardingInitial()) {
     on<OnboardingEvent>((event, emit) {});
@@ -47,14 +46,14 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     Emitter<OnboardingState> emit,
   ) {
     currentPage = event.pageIndex;
-    //  emit(OnboardingPageState(currentPage: event.pageIndex));
+    emit(OnboardingPageState(currentPage: event.pageIndex));
   }
 
   FutureOr<void> completeOnboarding(
     CompleteOnboardingEvent event,
     Emitter<OnboardingState> emit,
   ) async {
-    getItData.saveData(key: "isOnboardingVisited", value: true);
-    //   emit(OnboardingCompleted());
+    //   getItData.saveData(key: "isOnboardingVisited", value: true);
+    emit(OnboardingCompleted());
   }
 }

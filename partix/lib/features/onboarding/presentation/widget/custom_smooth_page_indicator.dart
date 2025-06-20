@@ -12,12 +12,12 @@ class CustomSmoothPageIndicator extends StatelessWidget {
     return SmoothPageIndicator(
       controller: controller, // PageController
       count: onboardingData.length,
-      effect: SlideEffect(
-        dotColor: AppPalette.grayColor,
-        activeDotColor: AppPalette.whiteColor,
-        dotHeight: 4,
-        dotWidth: 26.28,
-      ), // your preferred effect
+      effect: ExpandingDotsEffect(
+        dotColor: AppPalette.whiteColor,
+        activeDotColor: AppPalette.grayColor,
+        dotHeight: 10,
+        dotWidth: 10,
+      ),
       onDotClicked: (index) {},
     );
   }

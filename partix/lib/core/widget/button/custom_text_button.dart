@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 
-
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
     super.key,
@@ -21,7 +20,8 @@ class CustomTextButton extends StatelessWidget {
       child: Text(
         text,
         style:
-            styles ?? TextStyles.lato40016.copyWith(color: AppPalette.whiteColor),
+            styles ??
+            TextStyles.sepro40015.copyWith(color: AppPalette.whiteColor),
       ),
     );
   }

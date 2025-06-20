@@ -21,10 +21,10 @@ class CustomTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(labelText, style: TextStyles.lato40016),
+        Text(labelText, style: TextStyles.sepro40015),
         SizedBox(height: 8),
         TextFormField(
-          style: TextStyles.lato40016,
+          style: TextStyles.sepro40015,
           controller: controller,
           obscureText: obscureText!,
           decoration: InputDecoration(hintText: text),

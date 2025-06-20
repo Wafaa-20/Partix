@@ -14,17 +14,17 @@ class OnboardingModel {
 
 List<OnboardingModel> onboardingData = [
   OnboardingModel(
-    image: "asset/image/onboarding1.png",
+    image: "assets/images/onbording1.png",
     title: AppText.title1,
     subTitle: AppText.subTitle1,
   ),
   OnboardingModel(
-    image: "asset/image/onboarding2.png",
+    image: "assets/images/onbordin2.png",
     title: AppText.title2,
     subTitle: AppText.subTitle2,
   ),
   OnboardingModel(
-    image: "asset/image/onboarding3.png",
+    image: "assets/images/onbording3.png",
     title: AppText.title3,
     subTitle: AppText.subTitle3,
   ),
