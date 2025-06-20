@@ -37,13 +37,16 @@ parts around you.""";
   static const String doTodaySubtitle = "Tap + to add your tasks";
   static const String location = "Location";
   static const String addYourLocation = "Add your Location";
+  static const String cityLoading = "city is loading ...";
+  static const String welcome = "Welcome";
+  static const String unkownen = "unkownen Location";
 
   static const List categoriesList = [
-    Icons.grid_view_outlined,
-    Icons.monitor_outlined,
-    LucideIcons.cpu,
-    Icons.headphones_outlined,
-    LucideIcons.gamepad2,
+    {"icon": Icons.grid_view_outlined, "label": "All"},
+    {"icon": Icons.monitor_outlined, "label": "Monitor"},
+    {"icon": LucideIcons.cpu, "label": "PC Parts"},
+    {"icon": Icons.headphones_outlined, "label": "Accessories"},
+    {"icon": LucideIcons.gamepad2, "label": "Gaming PC "},
   ];
   static const String search = "Search";
   static const List<Map<String, dynamic>> itemList = [
@@ -61,7 +64,7 @@ parts around you.""";
       "size": "27 inches",
       "refrishRate": "144 Hz",
       "responseTime": "1 ms",
-      "Sync Tech": "G-Sync Compatible",
+      "syncTech": "G-Sync Compatible",
     },
     {
       "id": 2,
@@ -77,7 +80,7 @@ parts around you.""";
       "size": "Standard Size",
       "refrishRate": "N/A",
       "responseTime": "N/A",
-      "Sync Tech": "Bluetooth 5.0",
+      "syncTech": "Bluetooth 5.0",
     },
     {
       "id": 3,
@@ -93,7 +96,7 @@ parts around you.""";
       "size": "Medium",
       "refrishRate": "N/A",
       "responseTime": "1 ms",
-      "Sync Tech": "Wired USB",
+      "syncTech": "Wired USB",
     },
     {
       "id": 4,
@@ -109,7 +112,7 @@ parts around you.""";
       "size": "Compact",
       "refrishRate": "N/A",
       "responseTime": "N/A",
-      "Sync Tech": "Bluetooth",
+      "syncTech": "Bluetooth",
     },
     {
       "id": 5,
@@ -125,9 +128,11 @@ parts around you.""";
       "size": "Standard",
       "refrishRate": "N/A",
       "responseTime": "2 ms",
-      "Sync Tech": "Wired USB",
+      "syncTech": "Wired USB",
     },
   ];
+  static const String addtoCart = "Add To Cart";
+  static const String addedToCart = "Addded To Cart";
 
   //Bottom nav bar
   static const String calendar = "Calendar";

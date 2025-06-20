@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
+import 'package:partix/core/text/app_text.dart';
+import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/features/item_details/presentation/bloc/item_details_bloc.dart';
 import 'package:partix/features/item_details/presentation/bloc/item_details_event.dart';
 import 'package:partix/features/item_details/presentation/bloc/item_details_state.dart';
+import 'package:partix/features/item_details/presentation/widgets/add_to_cart_dialog.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ItemDetailsPage extends StatelessWidget {
@@ -55,7 +58,8 @@ class ItemDetailsPage extends StatelessWidget {
                     item['image2'],
                     item['image3'],
                   ];
-
+                  final double doublePrice = item['price'];
+                  final String fixedPrice = doublePrice.toStringAsFixed(2);
                   return SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -142,22 +146,75 @@ class ItemDetailsPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 16),
-                        Text(item['longTitle']),
-                        SizedBox(height: 16),
-                        Text(item['category']),
-                        SizedBox(height: 16),
-                        Text(item['screenDetails']),
-                        SizedBox(height: 16),
-                        Text(item['size']),
-                        SizedBox(height: 16),
-                        Text(item['refrishRate']),
-                        SizedBox(height: 16),
-                        Text(item['responseTime']),
-                        SizedBox(height: 16),
-                        Text(item['Sync Tech']),
-                        SizedBox(height: 16),
-                        Text(item['price'].toString()),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 26),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 16),
+                              Text(
+                                item['longTitle'],
+                                style: TextStyles.blacksepro50020,
+                              ),
+                              SizedBox(height: 16),
+                              Text(
+                                item['category'],
+                                style: TextStyles.sepro40015,
+                              ),
+                              SizedBox(height: 16),
+                              Text(item['screenDetails']),
+                              SizedBox(height: 16),
+                              Text('Size: ${item['size']}'),
+                              SizedBox(height: 16),
+                              Text('Refrish Rate: ${item['refrishRate']}'),
+                              SizedBox(height: 16),
+                              Text('Response Time: ${item['responseTime']}'),
+                              SizedBox(height: 16),
+                              Text('Sync Tech: ${item['syncTech']}'),
+                              SizedBox(height: 46),
+                            ],
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 20,
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '$fixedPrice SR',
+                                    style: TextStyles.sepro50036,
+                                  ),
+                                  SizedBox(height: context.getHeight() * 0.10),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      minimumSize: Size(75, 5),
+                                      backgroundColor: AppPalette.orangeColor,
+                                      fixedSize: Size.fromHeight(
+                                        context.getHeight() * 0.032,
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      print(item['id']);
+                                      showAddToCartDialog(context);
+                                    },
+                                    child: Text(
+                                      AppText.addtoCart,
+                                      style: TextStyles.sepro50017,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   );

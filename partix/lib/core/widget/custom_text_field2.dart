@@ -9,6 +9,7 @@ class CustomTextField2 extends StatefulWidget {
     this.obscureText = false,
     this.validator,
     this.lefticon,
+    this.onchange,
   });
 
   final TextEditingController? controller;
@@ -16,6 +17,7 @@ class CustomTextField2 extends StatefulWidget {
   final bool? obscureText;
   final String? Function(String?)? validator;
   final Widget? lefticon;
+  final void Function(String)? onchange;
 
   @override
   State<CustomTextField2> createState() => _CustomTextField2State();
@@ -48,6 +50,7 @@ class _CustomTextField2State extends State<CustomTextField2> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onchange,
       style: TextStyles.blacksepro40015,
       controller: _internalController,
       obscureText: widget.obscureText ?? false,

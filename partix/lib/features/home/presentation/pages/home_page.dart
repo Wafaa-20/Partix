@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
 import 'package:partix/core/extension/navigation.dart';
 import 'package:partix/core/text/app_text.dart';
@@ -12,19 +13,24 @@ import 'package:partix/features/home/presentation/bloc/home_event.dart';
 import 'package:partix/features/home/presentation/bloc/home_state.dart';
 import 'package:partix/features/home/presentation/widget/category_button.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:partix/features/home/presentation/widget/googlemaps_dialog.dart';
 import 'package:partix/features/home/presentation/widget/item_card.dart';
 import 'package:partix/features/item_details/presentation/pages/item_details_page.dart';
+import 'package:geocoding/geocoding.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+  const HomePage({super.key, this.usernick = 'user'});
+  final String? usernick;
   @override
   Widget build(BuildContext context) {
+    LatLng? userLocation;
+    String? cityName;
     return BlocProvider(
       create: (context) => HomeBloc(),
       child: Builder(
         builder: (context) {
           final bloc = context.read<HomeBloc>();
+          final state = context.watch<HomeBloc>().state;
           return Scaffold(
             resizeToAvoidBottomInset: true,
             body: SafeArea(
@@ -33,30 +39,90 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 1, width: context.getWidth()),
-                  Text(AppText.location, style: TextStyles.sepro40015),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.location_on_outlined,
-                        size: 18,
-                        color: AppPalette.orangeColor,
-                      ),
-                      DropdownButton<String>(
-                        items: [],
-                        hint: Text(
-                          AppText.addYourLocation,
-                          style: TextStyles.sepro40015,
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.location_on_outlined,
+                                  size: 18,
+                                  color: AppPalette.orangeColor,
+                                ),
+                                Text(
+                                  AppText.location,
+                                  style: TextStyles.sepro40015,
+                                ),
+                              ],
+                            ),
+                            Text(
+                              '${AppText.welcome} ${usernick ?? ''}',
+                              style: TextStyles.sepro50017,
+                            ),
+                          ],
                         ),
-                        menuWidth: context.getWidth() * 0.4,
-                        underline: SizedBox(),
-                        onChanged: (Object? value) {},
-                        icon: Icon(Icons.keyboard_arrow_down_sharp),
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            BlocBuilder<HomeBloc, HomeState>(
+                              builder: (context, state) {
+                                return InkWell(
+                                  onTap: () async {
+                                    final userLocation =
+                                        await showLocationPickerDialog(context);
+                                    if (userLocation != null) {
+                                      final placemarks =
+                                          await placemarkFromCoordinates(
+                                            userLocation.latitude,
+                                            userLocation.longitude,
+                                          );
+
+                                      final city = placemarks.isNotEmpty
+                                          ? placemarks.first.locality ??
+                                                AppText.unkownen
+                                          : AppText.unkownen;
+
+                                      bloc.add(
+                                        LocationUpdated(
+                                          location: userLocation,
+                                          cityName: city,
+                                        ),
+                                      );
+                                    }
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 15,
+                                    ),
+                                    child: Text(
+                                      state.userLocation != null
+                                          ? (state.cityName ??
+                                                AppText.cityLoading)
+                                          : AppText.addYourLocation,
+                                      style: TextStyles.sepro40015,
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down_outlined,
+                              color: AppPalette.whiteColor,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
+                  SizedBox(height: context.getHeight() * 0.02),
                   Container(
-                    width: context.getWidth() * 0.8,
+                    width: context.getWidth() * 0.85,
+                    height: 35,
                     alignment: Alignment.bottomCenter,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -65,6 +131,7 @@ class HomePage extends StatelessWidget {
                     child: CustomTextField2(
                       lefticon: Icon(Icons.search, size: 30),
                       controller: bloc.searchController,
+                      onchange: (p0) => bloc.add(SearchEvant(search: p0)),
                       text: AppText.search,
                     ),
                   ),
@@ -74,14 +141,14 @@ class HomePage extends StatelessWidget {
                       return SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          children: AppText.categoriesList.map((icon) {
+                          children: AppText.categoriesList.map((category) {
                             return CategoryButton(
-                              icon: icon,
-                              isSelected: state.selectedLabel == icon,
+                              icon: category['icon'],
+                              label: category['label'],
+                              isSelected:
+                                  state.selectedLabel == category['icon'],
                               onTap: () {
-                                context.read<HomeBloc>().add(
-                                  CategorySelected(icon),
-                                );
+                                bloc.add(CategorySelected(category['icon']));
                               },
                             );
                           }).toList(),
@@ -97,7 +164,7 @@ class HomePage extends StatelessWidget {
                         child: GridView.builder(
                           shrinkWrap: true,
                           physics: NeverScrollableScrollPhysics(),
-                          itemCount: AppText.itemList.length,
+                          itemCount: state.filteredItems.length,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
@@ -106,7 +173,7 @@ class HomePage extends StatelessWidget {
                                 mainAxisSpacing: 8,
                               ),
                           itemBuilder: (context, index) {
-                            final item = AppText.itemList[index];
+                            final item = state.filteredItems[index];
                             return ItemCard(
                               image: item['image'],
                               title: item['title'],
