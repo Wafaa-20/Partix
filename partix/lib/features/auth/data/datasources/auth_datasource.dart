@@ -9,9 +9,6 @@ class AuthDatasourceImpl implements AuthDatasource {
   Future<AuthModel> getAuth() async {
     // TODO: implement actual data source logic
     // This is just a placeholder implementation
-    return AuthModel(
-      id: '1',
-      name: 'Auth Name',
-    );
+    return AuthModel(id: '', email: '', password: '', mobile: '');
   }
 }

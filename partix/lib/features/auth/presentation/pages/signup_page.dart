@@ -19,11 +19,11 @@ class SignupPage extends StatelessWidget {
             return SafeArea(
               bottom: false,
               child: Stack(
-                alignment: Alignment.topLeft,
+                alignment: Alignment.center,
                 children: [
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Image.asset("asset/image/login.png"),
+                  Positioned(
+                    top: 50,
+                    child: Image.asset("asset/image/signup.png"),
                   ),
                   Positioned(
                     top: 233,
