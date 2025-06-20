@@ -6,9 +6,11 @@ import 'package:partix/features/auth/presentation/bloc/auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final mobController = TextEditingController();
+  
   AuthBloc() : super(AuthInitial()) {
     on<AuthEvent>((event, emit) {
-      // TODO: implement event handler
+    
     });
   }
 }

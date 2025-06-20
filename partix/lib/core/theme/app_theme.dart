@@ -36,8 +36,8 @@ class AppTheme {
       filled: true,
       fillColor: AppPalette.whiteColor,
       hintStyle: TextStyles.sepro30012,
-      // focusedBorder: _border(AppPalette.grayColor),
-      // enabledBorder: _border(AppPalette.grayColor),
+      focusedBorder: _border(AppPalette.blueColor3),
+      enabledBorder: _border(AppPalette.grayColor),
     ),
 
     //Text Button Theme
@@ -50,9 +50,10 @@ class AppTheme {
     ),
   );
   //Outline Input Border Method
-  // static OutlineInputBorder _border(Color borderColor) {
-  //   return OutlineInputBorder(
-  //     borderSide: BorderSide(color: AppPalette.lightGray2, width: 0.8),
-  //   );
-  // }
+  static OutlineInputBorder _border(Color borderColor) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: AppPalette.grayLight, width: 0.8),
+    );
+  }
 }

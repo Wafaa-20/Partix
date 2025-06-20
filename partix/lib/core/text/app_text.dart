@@ -28,9 +28,11 @@ parts around you.""";
   static const String register = "Register now";
 
   //SignUp Screen
-  static const String signUp = "sign up";
+  static const String signUp = "Sign up";
   static const String mobileNumber = "Mobile number";
   static const String hintmobileNumber = "Enter mobile number";
+  static const String haveAccount = "Already have an account?";
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //Home
   static const String index = "Index";
