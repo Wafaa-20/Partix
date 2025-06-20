@@ -7,7 +7,7 @@ class TextStyles {
     fontFamily: _fontFamily,
     fontWeight: FontWeight.w400,
     fontSize: 15,
-    color: AppPalette.grayLight,
+    color: AppPalette.blackColor,
   );
   static final sepro40028 = TextStyle(
     fontFamily: _fontFamily,
@@ -17,7 +17,7 @@ class TextStyles {
   );
   static final sepro70040 = TextStyle(
     fontFamily: _fontFamily,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w700,
     fontSize: 15,
     color: AppPalette.whiteColor,
   );
@@ -32,5 +32,11 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     fontSize: 36,
     color: AppPalette.blueColor,
+  );
+  static final sepro30012 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w600,
+    fontSize: 12,
+    // color: AppPalette.blueColor,
   );
 }

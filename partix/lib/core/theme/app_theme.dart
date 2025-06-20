@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 
 class AppTheme {
@@ -31,13 +32,13 @@ class AppTheme {
       ),
     ),
     //input Decoration Theme
-    // inputDecorationTheme: InputDecorationTheme(
-    //   filled: true,
-    //   fillColor: AppPalette.lightBlack,
-    //   hintStyle: TextStyles.lato40016.copyWith(color: AppPalette.lightGray),
-    //   focusedBorder: _border(AppPalette.grayColor),
-    //   enabledBorder: _border(AppPalette.grayColor),
-    // ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppPalette.whiteColor,
+      hintStyle: TextStyles.sepro30012,
+      // focusedBorder: _border(AppPalette.grayColor),
+      // enabledBorder: _border(AppPalette.grayColor),
+    ),
 
     //Text Button Theme
     textButtonTheme: TextButtonThemeData(
