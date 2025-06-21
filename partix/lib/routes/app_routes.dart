@@ -1,4 +1,5 @@
 abstract class Routes {
+  static const favorites = _Paths.favorites;
   static const card = _Paths.card;
   static const onboarding = _Paths.onboarding;
   static const home = _Paths.home;
@@ -8,6 +9,7 @@ abstract class Routes {
 }
 
 abstract class _Paths {
+  static const favorites = '/favorites';
   static const card = '/card';
   static const onboarding = '/onboarding';
   static const home = '/home';
@@ -17,6 +19,7 @@ abstract class _Paths {
 }
 
 abstract class _Names {
+  static const favorites = 'favorites';
   static const card = 'card';
   static const onboarding = 'onboarding';
   static const home = 'home';
@@ -26,6 +29,7 @@ abstract class _Names {
 }
 
 abstract class Names {
+  static const favorites = _Names.favorites;
   static const card = _Names.card;
   static const onboarding = _Names.onboarding;
   static const home = _Names.home;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:partix/core/theme/app_palette.dart';
 
-
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({
     super.key,
@@ -18,6 +17,7 @@ class CustomIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      padding: EdgeInsets.zero,
       onPressed: onPressed,
       icon: Icon(icon, color: color ?? AppPalette.whiteColor, size: size ?? 24),
     );

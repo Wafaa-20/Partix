@@ -1,17 +1,24 @@
-import 'package:partix/features/card/presentation/pages/card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partix/features/auth/presentation/pages/login_page.dart';
 import 'package:partix/features/auth/presentation/pages/signup_page.dart';
+import 'package:partix/features/card/presentation/pages/card_page.dart';
+import 'package:partix/features/favorites/presentation/pages/favorites_page.dart';
 import 'package:partix/features/home/presentation/pages/home_page.dart';
 import 'package:partix/features/onboarding/presentation/pages/onboarding_page.dart';
 
 import 'app_routes.dart';
 
 final router = GoRouter(
-  initialLocation: '/login',
+  initialLocation: '/card',
   navigatorKey: GlobalNavigation.instance.navigatorKey,
   routes: [
+    GoRoute(
+      name: Names.favorites,
+      path: Routes.favorites,
+      builder: (context, state) => const FavoritesPage(),
+    ),
+
     GoRoute(
       name: Names.card,
       path: Routes.card,

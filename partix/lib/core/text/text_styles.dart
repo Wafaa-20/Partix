@@ -45,6 +45,12 @@ class TextStyles {
     fontSize: 15,
     color: AppPalette.blueColor2,
   );
+  static final sepro50020 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w500,
+    fontSize: 20,
+    color: AppPalette.whiteColor,
+  );
   static final sepro50017 = TextStyle(
     fontFamily: _fontFamily,
     fontWeight: FontWeight.w500,
@@ -62,6 +68,12 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     fontSize: 36,
     color: AppPalette.blueColor,
+  );
+  static final sepro60017 = TextStyle(
+    fontFamily: _fontFamily,
+    fontWeight: FontWeight.w600,
+    fontSize: 17,
+    color: AppPalette.whiteColor,
   );
   static final sepro30012 = TextStyle(
     fontFamily: _fontFamily,

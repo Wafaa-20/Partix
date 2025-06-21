@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/core/text/app_text.dart';
 import 'package:partix/core/widget/nav/bloc/nav_bloc.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -25,15 +24,15 @@ class BottomNavBar extends StatelessWidget {
                   items: [
                     BottomNavigationBarItem(
                       icon: Icon(Icons.home_filled),
-                      label: AppText.index,
+                      label: 'index',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.calendar_month_outlined),
-                      label: AppText.calendar,
+                      label: 'calendar',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.person_outline_sharp),
-                      label: AppText.profile,
+                      label: 'profile',
                     ),
                   ],
                 ),

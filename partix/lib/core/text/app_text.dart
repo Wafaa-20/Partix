@@ -33,34 +33,16 @@ parts around you.""";
   static const String hintmobileNumber = "Enter mobile number";
   static const String haveAccount = "Already have an account?";
 
-  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  //Home
-  static const String index = "Index";
-  static const String doToday = "What do you want to do today?";
-  static const String doTodaySubtitle = "Tap + to add your tasks";
-  //Bottom nav bar
-  static const String calendar = "Calendar";
-  static const String profile = "Profile";
-  //Bottom Sheet
-  static const String task = "Add Task";
-  static const String hintTask = "Do math homework";
-  static const String description = "Description";
-  static const String hintDescription = "Do chapter 2 to 5 for next week";
+  //card
+  static const String cart = "Cart";
+  static const String empty = "The Cart is empty";
+  static const String shop = "Shop now";
+  static const String subtotal = "Subtotal: \$";
+  static const String checkout = "Checkout";
 
-  //Flag
-  static const String priority = "Task Priority";
-  static const String cancel = "Cancel";
-  static const String save = "Save";
-  static const String time = "Choose Time";
-
-  //Category Screens
-  static const String category = "Create new category";
-  static const String categoryName = "Category name :";
-  static const String hintCategory = "Category name";
-  static const String categoryIcon = "Category icon :";
-  static const String library = "Choose icon from library";
-  static const String categoryColor = "Category color :";
-  static const String create = "Create Category";
-  static const String addCategory = "Add Category";
-  static const String chooseCategory = "Choose Category";
+  //favorites
+  static const String favorites = "Favorites";
+  static const String empty2 = "Favorites list is empty";
+  static const String item = "Add Item";
+  static const String addCart = "Add to Cart";
 }

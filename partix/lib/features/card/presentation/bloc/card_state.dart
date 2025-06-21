@@ -8,3 +8,9 @@ sealed class CardState extends Equatable {
 }
 
 final class CardInitial extends CardState {}
+
+final class ItemState extends CardState {
+  final int count;
+
+  const ItemState({required this.count});
+}
