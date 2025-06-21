@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
 import 'package:partix/core/extension/navigation.dart';
@@ -8,15 +10,13 @@ import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/core/widget/custom_text_field2.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc/bloc.dart';
+import 'package:partix/features/google_map/presentation/pages/google_map_page.dart';
 import 'package:partix/features/home/presentation/bloc/home_bloc.dart';
 import 'package:partix/features/home/presentation/bloc/home_event.dart';
 import 'package:partix/features/home/presentation/bloc/home_state.dart';
 import 'package:partix/features/home/presentation/widget/category_button.dart';
-import 'package:lucide_icons/lucide_icons.dart';
-import 'package:partix/features/home/presentation/widget/googlemaps_dialog.dart';
 import 'package:partix/features/home/presentation/widget/item_card.dart';
 import 'package:partix/features/item_details/presentation/pages/item_details_page.dart';
-import 'package:geocoding/geocoding.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key, this.usernick = 'user'});
@@ -73,8 +73,18 @@ class HomePage extends StatelessWidget {
                               builder: (context, state) {
                                 return InkWell(
                                   onTap: () async {
+                                    final locationDetails = await context
+                                        .customPushWithReturnValue(
+                                          GoogleMapPage(),
+                                        );
+                                    if (locationDetails != null) {
+                                      print(locationDetails['location']);
+                                      print(locationDetails['details']);
+                                    }
+
                                     final userLocation =
-                                        await showLocationPickerDialog(context);
+                                        locationDetails['location'];
+
                                     if (userLocation != null) {
                                       final placemarks =
                                           await placemarkFromCoordinates(
