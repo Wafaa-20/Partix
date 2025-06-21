@@ -12,4 +12,5 @@ class AppPalette {
   static const grayColor = Color(0xFF787A91);
   static const grayColor2 = Color(0xFF585858);
   static const orangeColor = Color(0xFFFF6500);
+  static const lineColor = Color.fromARGB(82, 255, 255, 255);
 }

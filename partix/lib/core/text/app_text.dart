@@ -14,6 +14,7 @@ parts around you.""";
   static const String skip = "SKIP";
   static const String back = "BACK";
   static const String start = "Start";
+  static const String cancel = "Cancel";
   //Login Screen
   static const String login = "Login";
   static const String email = "Email";
@@ -110,16 +111,29 @@ parts around you.""";
   static const String favoritesPageEmpty = "Favorites list is empty";
   //Profile
   static const String profile = "Profile";
-  static const String accountProfile = "Account";
-  static const String accountProfileSubtitle = "Email, birthday, country";
   static const String orders = "Orders";
   static const String ordersSubtitle = "My orders";
-  static const String profileAdress = "Payment & Addresses";
-  static const String profileAdressSubtitle =
-      "Saved payment methods, saved addresses";
   static const String preferences = "Preferences";
   static const String preferencesSubtitle = "Push notifications, theme";
   static const String support = "Support & Legal";
   static const String supportSubtitle = "Help center, privacy policy & terms";
   static const String logout = "Logout";
+  static const String confirmLogoutMessage =
+      "Are you sure you want to log out?";
+  //support
+  static const String supportDialogTitle = "Need Help?";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termsAndConditions = "Terms & Conditions";
+  static const String contactSupport = "Contact Support";
+  static const String contactSupportMessage = "Please describe your issue.";
+  static const String privacyPolicyShortDesc =
+      "Learn how we collect, use, and protect your data.";
+  static const String termsAndConditionsShortDesc =
+      "Understand the rules for using our services.";
+  //prefrences
+  static const String preferencesDialogTitle = "App Preferences";
+  static const String notifications = "Notifications";
+  static const String receiveNotifications = "Receive push notifications";
+  static const String appTheme = "App Theme";
+  static const String noOrder = "There is no Orders";
 }
