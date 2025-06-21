@@ -1,3 +1,4 @@
+import 'package:partix/features/card/presentation/pages/card_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partix/features/auth/presentation/pages/login_page.dart';
@@ -11,6 +12,12 @@ final router = GoRouter(
   initialLocation: '/login',
   navigatorKey: GlobalNavigation.instance.navigatorKey,
   routes: [
+    GoRoute(
+      name: Names.card,
+      path: Routes.card,
+      builder: (context, state) => const CardPage(),
+    ),
+
     GoRoute(
       name: Names.signup,
       path: Routes.signup,
