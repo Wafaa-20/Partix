@@ -12,7 +12,7 @@ Future<LatLng?> showLocationPickerDialog(BuildContext context) async {
     userPosition.longitude,
   );
 
-  final Completer<GoogleMapController> _mapController = Completer();
+  final Completer<GoogleMapController> mapController = Completer();
 
   return showDialog<LatLng>(
     context: context,
@@ -45,7 +45,7 @@ Future<LatLng?> showLocationPickerDialog(BuildContext context) async {
                     ),
                     markers: {userMarker},
                     onMapCreated: (controller) {
-                      _mapController.complete(controller);
+                      mapController.complete(controller);
                     },
                     onTap: (LatLng newPos) {
                       setState(() {

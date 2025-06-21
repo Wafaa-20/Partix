@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
 import 'package:partix/core/extension/navigation.dart';
@@ -9,7 +8,6 @@ import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/core/widget/custom_text_field2.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloc/bloc.dart';
 import 'package:partix/features/google_map/presentation/pages/google_map_page.dart';
 import 'package:partix/features/home/presentation/bloc/home_bloc.dart';
 import 'package:partix/features/home/presentation/bloc/home_event.dart';

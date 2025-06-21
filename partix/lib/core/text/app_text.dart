@@ -17,21 +17,16 @@ parts around you.""";
   static const String skip = "SKIP";
   static const String back = "BACK";
   static const String start = "Start";
-  //Login Screen
+
   static const String cancel = "Cancel";
+  //Login Screen
   static const String guest = "Continue as a guest";
   static const String login = "Login";
   static const String email = "Email";
+  static const String hintEmail = "Enter the email";
   static const String password = "Password";
   static const String hintPassword = "Enter the password";
   static const String forgotPassword = "Forgot your password?";
-  static const String account = "You do not have an account?";
-
-  //SignUp Screen
-  static const String signUp = "sign up";
-  static const String mobileNumber = "Mobile number";
-  static const String hintmobileNumber = "Enter mobile number";
-
   static const String or = "OR";
   static const String account = "You do not have an account?";
   static const String register = "Register now";
@@ -52,6 +47,7 @@ parts around you.""";
   static const String cityLoading = "city is loading ...";
   static const String welcome = "Welcome";
   static const String unkownen = "unkownen Location";
+
   static const List categoriesList = [
     {"icon": Icons.grid_view_outlined, "label": "All"},
     {"icon": Icons.monitor_outlined, "label": "Monitor"},
@@ -151,37 +147,21 @@ parts around you.""";
   ];
   static const String addtoCart = "Add To Cart";
   static const String addedToCart = "Addded To Cart";
+  //google map
 
-  //Bottom nav bar
-  static const String calendar = "Calendar";
-  static const String profile = "Profile";
-  //Bottom Sheet
-  static const String task = "Add Task";
-  static const String hintTask = "Do math homework";
-  static const String description = "Description";
-  static const String hintDescription = "Do chapter 2 to 5 for next week";
-
-  //Flag
-  static const String priority = "Task Priority";
-  static const String cancel = "Cancel";
+  static const String chooseDeliveryLocation = "Choose a delivery location";
+  static const String searchLocation = "Search location";
+  static const String confirmLocation = "Confirm Location";
+  static const String confirm = "Confirm";
+  static const String additionalAddressDetails = "Additional Address Details";
+  static const String apartmentHouseNumber = "apartment-house number";
   static const String save = "Save";
-  static const String time = "Choose Time";
-
-  //Category Screens
-  static const String category = "Create new category";
-  static const String categoryName = "Category name :";
-  static const String hintCategory = "Category name";
-  static const String categoryIcon = "Category icon :";
-  static const String library = "Choose icon from library";
-  static const String categoryColor = "Category color :";
-  static const String create = "Create Category";
-  static const String addCategory = "Add Category";
-  static const String chooseCategory = "Choose Category";
   //Bottom nav bar
   static const String calendar = "Calendar";
   static const String profile = "Profile";
   static const String orders = "Orders";
   static const String ordersSubtitle = "My orders";
+  static const String preferences = "Preferences";
   static const String preferencesSubtitle = "Push notifications, theme";
   static const String support = "Support & Legal";
   static const String supportSubtitle = "Help center, privacy policy & terms";

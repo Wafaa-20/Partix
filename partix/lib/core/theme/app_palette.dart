@@ -10,6 +10,7 @@ class AppPalette {
   static const whiteColor = Colors.white;
   static const whiteLight = Color(0xffFFFDFD);
   static const whiteLight2 = Color(0xffEEEEEE);
+  static const whiteLight3 = Color(0xFFF7F7F7);
   static const grayLight = Color(0xFFAAAAAA);
   static const grayColor = Color(0xFF787A91);
   static const grayColor2 = Color(0xFF585858);

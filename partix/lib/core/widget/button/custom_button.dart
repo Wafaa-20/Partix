@@ -22,15 +22,9 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.zero,
-<<<<<<< HEAD
-        backgroundColor: color ?? AppPalette.blueColor2,
-        foregroundColor: AppPalette.whiteColor,
-        fixedSize: Size(width ?? 90, height ?? 48),
-=======
         backgroundColor: color ?? AppPalette.blueColor3,
         foregroundColor: AppPalette.whiteColor,
         fixedSize: Size(width ?? 300, height ?? 50),
->>>>>>> origin/new-branch
       ),
       child: child,
     );

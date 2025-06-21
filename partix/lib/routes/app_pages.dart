@@ -6,25 +6,20 @@ import 'package:partix/features/auth/presentation/pages/signup_page.dart';
 import 'package:partix/features/home/presentation/pages/home_page.dart';
 import 'package:partix/features/onboarding/presentation/pages/onboarding_page.dart';
 import 'package:partix/features/google_map/presentation/pages/google_map_page.dart';
-import 'package:partix/features/item_details/presentation/pages/item_details_page.dart';
 import 'package:partix/core/widget/nav/page/bottom_nav_bar.dart';
-
 
 import 'app_routes.dart';
 
 final router = GoRouter(
-  initialLocation: '/login',
+  initialLocation: '/home',
   navigatorKey: GlobalNavigation.instance.navigatorKey,
-  routes: [GoRoute(
-      name: Names.google_map,
-      path: Routes.google_map,
+  routes: [
+    GoRoute(
+      name: Names.googleMap,
+      path: Routes.googleMap,
       builder: (context, state) => const GoogleMapPage(),
     ),
-    GoRoute(
-      name: Names.home,
-      path: Routes.home,
-      builder: (context, state) => const BottomNavBar(),
-    ),
+
     GoRoute(
       name: Names.card,
       path: Routes.card,
@@ -62,4 +57,3 @@ class GlobalNavigation {
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }
-
