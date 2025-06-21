@@ -1,6 +1,5 @@
 //Shared Preferences
-import 'dart:convert';
-
+import 'package:dart_mappable/dart_mappable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
@@ -30,33 +29,25 @@ class LocalStorage {
 
   //get any type of data from Shared Preferences already saved
   dynamic getData({required String key}) {
-    return sharedPreferences.getString(key);
+    return sharedPreferences.get(key);
   }
 
-  // get data from Shared Preferences
-  // Future<CategoryModel?> getCategory() async {
-  //   final convertToString = getData(key: 'category');
-  //   if (convertToString != null && convertToString is String) {
-  //     return CategoryModelMapper.fromJson(convertToString);
-  //   }
+  // Save ModelData to Shared Preferences
+  Future<void> saveModel<T>({
+    required String key,
+    required List<T> modelData,
+  }) async {
+    final convertToJson = modelData
+        .map((model) => MapperContainer.globals.toJson<T>(model))
+        .toList();
+    await saveData(key: key, value: convertToJson);
+  }
 
-  //   return null;
-  // }
-  // Future<CategoryModel?> getCategory() async {
-  //   final convertToString = getData(key: 'category');
-  //   if (convertToString != null && convertToString is String) {
-  //     final jsonMap = jsonDecode(convertToString);
-  //     return CategoryModel.fromMapForShared(jsonMap);
-  //   }
-  //   return null;
-  // }
-
-  // Future<void> saveCategoryList({
-  //   required List<CategoryModel> categories,
-  // }) async {
-  //   final encodedList = categories
-  //       .map((cat) => jsonEncode(cat.mapForAddShared()))
-  //       .toList();
-  //   await saveData(key: 'categories', value: encodedList);
-  // }
+  // load data Model from Shared Preferences
+  Future<List<T>> loadModel<T>({required String key}) async {
+    final convertFromJson = getData(key: key) as List<dynamic>? ?? [];
+    return convertFromJson
+        .map((json) => MapperContainer.globals.fromJson<T>(((json))))
+        .toList();
+  }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:partix/core/text/text_styles.dart';
-import 'package:partix/core/theme/app_palette.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -17,12 +16,7 @@ class CustomTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: Text(
-        text,
-        style:
-            styles ??
-            TextStyles.sepro40015.copyWith(color: AppPalette.whiteColor),
-      ),
+      child: Text(text, style: styles ?? TextStyles.sepro50017),
     );
   }
 }

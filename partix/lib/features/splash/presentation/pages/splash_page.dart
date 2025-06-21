@@ -30,7 +30,7 @@ class SplashPage extends StatelessWidget {
                   height: 322,
                   width: 256,
                   child: Image.asset(
-                    "assets/images/logo.png",
+                    "asset/image/logo.png",
                     fit: BoxFit.contain,
                   ),
                 ),
