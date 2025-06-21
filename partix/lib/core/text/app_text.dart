@@ -15,6 +15,7 @@ parts around you.""";
   static const String back = "BACK";
   static const String start = "Start";
 
+  static const String cancel = "Cancel";
   //Login Screen
   static const String guest = "Continue as a guest";
   static const String login = "Login";
@@ -41,26 +42,29 @@ parts around you.""";
   //Bottom nav bar
   static const String calendar = "Calendar";
   static const String profile = "Profile";
-  //Bottom Sheet
-  static const String task = "Add Task";
-  static const String hintTask = "Do math homework";
-  static const String description = "Description";
-  static const String hintDescription = "Do chapter 2 to 5 for next week";
-
-  //Flag
-  static const String priority = "Task Priority";
-  static const String cancel = "Cancel";
-  static const String save = "Save";
-  static const String time = "Choose Time";
-
-  //Category Screens
-  static const String category = "Create new category";
-  static const String categoryName = "Category name :";
-  static const String hintCategory = "Category name";
-  static const String categoryIcon = "Category icon :";
-  static const String library = "Choose icon from library";
-  static const String categoryColor = "Category color :";
-  static const String create = "Create Category";
-  static const String addCategory = "Add Category";
-  static const String chooseCategory = "Choose Category";
+  static const String orders = "Orders";
+  static const String ordersSubtitle = "My orders";
+  static const String preferences = "Preferences";
+  static const String preferencesSubtitle = "Push notifications, theme";
+  static const String support = "Support & Legal";
+  static const String supportSubtitle = "Help center, privacy policy & terms";
+  static const String logout = "Logout";
+  static const String confirmLogoutMessage =
+      "Are you sure you want to log out?";
+  //support
+  static const String supportDialogTitle = "Need Help?";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termsAndConditions = "Terms & Conditions";
+  static const String contactSupport = "Contact Support";
+  static const String contactSupportMessage = "Please describe your issue.";
+  static const String privacyPolicyShortDesc =
+      "Learn how we collect, use, and protect your data.";
+  static const String termsAndConditionsShortDesc =
+      "Understand the rules for using our services.";
+  //prefrences
+  static const String preferencesDialogTitle = "App Preferences";
+  static const String notifications = "Notifications";
+  static const String receiveNotifications = "Receive push notifications";
+  static const String appTheme = "App Theme";
+  static const String noOrder = "There is no Orders";
 }
