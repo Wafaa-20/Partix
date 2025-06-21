@@ -5,7 +5,7 @@ import 'package:partix/features/onboarding/presentation/bloc/onboarding_state.da
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   OnboardingBloc() : super(OnboardingInitial()) {
     on<OnboardingEvent>((event, emit) {
-      
+      // TODO: implement event handler
     });
   }
 }

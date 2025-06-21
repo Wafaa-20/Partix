@@ -7,6 +7,11 @@ abstract class OnboardingDatasource {
 class OnboardingDatasourceImpl implements OnboardingDatasource {
   @override
   Future<OnboardingModel> getOnboarding() async {
-    return OnboardingModel(id: '1', name: 'Onboarding Name');
+    // TODO: implement actual data source logic
+    // This is just a placeholder implementation
+    return OnboardingModel(
+      id: '1',
+      name: 'Onboarding Name',
+    );
   }
 }

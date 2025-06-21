@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-extension Navigation on BuildContext {
-  void customPushReplacement(Widget path) {
+extension Navigation on BuildContext{
+   void customPushReplacement(Widget path) {
     Navigator.pushReplacement(this, MaterialPageRoute(builder: (_) => path));
   }
 

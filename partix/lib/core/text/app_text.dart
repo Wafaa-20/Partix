@@ -18,9 +18,10 @@ parts around you.""";
   static const String back = "BACK";
   static const String start = "Start";
   //Login Screen
+  static const String cancel = "Cancel";
+  static const String guest = "Continue as a guest";
   static const String login = "Login";
   static const String email = "Email";
-  static const String hintEmail = "Enter the email";
   static const String password = "Password";
   static const String hintPassword = "Enter the password";
   static const String forgotPassword = "Forgot your password?";
@@ -31,6 +32,17 @@ parts around you.""";
   static const String mobileNumber = "Mobile number";
   static const String hintmobileNumber = "Enter mobile number";
 
+  static const String or = "OR";
+  static const String account = "You do not have an account?";
+  static const String register = "Register now";
+
+  //SignUp Screen
+  static const String signUp = "Sign up";
+  static const String mobileNumber = "Mobile number";
+  static const String hintmobileNumber = "Enter mobile number";
+  static const String haveAccount = "Already have an account?";
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //Home
   static const String index = "Index";
   static const String doToday = "What do you want to do today?";
@@ -40,7 +52,6 @@ parts around you.""";
   static const String cityLoading = "city is loading ...";
   static const String welcome = "Welcome";
   static const String unkownen = "unkownen Location";
-
   static const List categoriesList = [
     {"icon": Icons.grid_view_outlined, "label": "All"},
     {"icon": Icons.monitor_outlined, "label": "Monitor"},
@@ -166,4 +177,31 @@ parts around you.""";
   static const String create = "Create Category";
   static const String addCategory = "Add Category";
   static const String chooseCategory = "Choose Category";
+  //Bottom nav bar
+  static const String calendar = "Calendar";
+  static const String profile = "Profile";
+  static const String orders = "Orders";
+  static const String ordersSubtitle = "My orders";
+  static const String preferencesSubtitle = "Push notifications, theme";
+  static const String support = "Support & Legal";
+  static const String supportSubtitle = "Help center, privacy policy & terms";
+  static const String logout = "Logout";
+  static const String confirmLogoutMessage =
+      "Are you sure you want to log out?";
+  //support
+  static const String supportDialogTitle = "Need Help?";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String termsAndConditions = "Terms & Conditions";
+  static const String contactSupport = "Contact Support";
+  static const String contactSupportMessage = "Please describe your issue.";
+  static const String privacyPolicyShortDesc =
+      "Learn how we collect, use, and protect your data.";
+  static const String termsAndConditionsShortDesc =
+      "Understand the rules for using our services.";
+  //prefrences
+  static const String preferencesDialogTitle = "App Preferences";
+  static const String notifications = "Notifications";
+  static const String receiveNotifications = "Receive push notifications";
+  static const String appTheme = "App Theme";
+  static const String noOrder = "There is no Orders";
 }
