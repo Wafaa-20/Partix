@@ -12,9 +12,13 @@ class AppPalette {
   static const whiteLight2 = Color(0xffEEEEEE);
 
   static const whiteLight3 = Color(0x4DFFFFFF);
+
+  static const whiteLight4 = Color(0xFFF7F7F7);
+
   static const grayLight = Color(0xFFAAAAAA);
   static const grayLight2 = Color(0x33AAAAAA);
   static const grayColor = Color(0xFF787A91);
   static const grayColor2 = Color(0xFF585858);
   static const orangeColor = Color(0xFFFF6500);
+  static const lineColor = Color.fromARGB(82, 255, 255, 255);
 }

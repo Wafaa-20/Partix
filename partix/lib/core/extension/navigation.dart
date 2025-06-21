@@ -9,8 +9,11 @@ extension Navigation on BuildContext{
     Navigator.push(this, MaterialPageRoute(builder: (_) => path));
   }
 
+  Future? customPushWithReturnValue(Widget path) {
+    return Navigator.push(this, MaterialPageRoute(builder: (_) => path));
+  }
+
   void customPop() {
     Navigator.pop(this);
   }
-
 }

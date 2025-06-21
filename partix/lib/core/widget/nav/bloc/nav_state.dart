@@ -4,5 +4,8 @@ part of 'nav_bloc.dart';
 sealed class NavState {}
 
 final class NavInitial extends NavState {}
-final class NavSelectedState extends NavState {}
 
+class NavSelectedState extends NavState {
+  final int selectedIndex;
+  NavSelectedState(this.selectedIndex);
+}

@@ -33,6 +33,13 @@ class AppTheme {
       ),
     ),
     //input Decoration Theme
+    // inputDecorationTheme: InputDecorationTheme(
+    //   filled: true,
+    //   fillColor: AppPalette.lightBlack,
+    //   hintStyle: TextStyles.lato40016.copyWith(color: AppPalette.lightGray),
+    //   focusedBorder: _border(AppPalette.grayColor),
+    //   enabledBorder: _border(AppPalette.grayColor),
+    // ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppPalette.whiteColor,
@@ -54,6 +61,11 @@ class AppTheme {
     ),
   );
   //Outline Input Border Method
+  // static OutlineInputBorder _border(Color borderColor) {
+  //   return OutlineInputBorder(
+  //     borderSide: BorderSide(color: AppPalette.lightGray2, width: 0.8),
+  //   );
+  // }
   static OutlineInputBorder _border(Color borderColor) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
