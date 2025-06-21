@@ -1,25 +1,23 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:partix/features/home/presentation/pages/home_page.dart';
 
 part 'nav_event.dart';
 part 'nav_state.dart';
 
 class NavBloc extends Bloc<NavEvent, NavState> {
-  int selectedPage = 0;
-  //add pages to bottom nav bar
-  List<Widget> pages = [];
-  NavBloc() : super(NavInitial()) {
-    on<NavEvent>((event, emit) {});
-    on<ChangeNavSelectedEvent>(selectPage);
+  final List<Widget> pages = [
+    HomePage(),
+    Placeholder(),
+    Placeholder(),
+    Placeholder(),
+  ];
+
+  NavBloc() : super(NavSelectedState(0)) {
+    on<ChangeNavSelectedEvent>(_onPageChanged);
   }
 
-  FutureOr<void> selectPage(
-    ChangeNavSelectedEvent event,
-    Emitter<NavState> emit,
-  ) {
-    selectedPage = event.index;
-    emit(NavSelectedState());
+  void _onPageChanged(ChangeNavSelectedEvent event, Emitter<NavState> emit) {
+    emit(NavSelectedState(event.index));
   }
 }

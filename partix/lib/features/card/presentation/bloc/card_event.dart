@@ -6,3 +6,6 @@ sealed class CardEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+final class IncreaseItem extends CardEvent {}
+
+final class DecreaseItem extends CardEvent {}

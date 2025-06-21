@@ -1,10 +1,13 @@
-import 'package:equatable/equatable.dart';
+part of 'onboarding_bloc.dart';
 
-sealed class OnboardingState extends Equatable {
-  const OnboardingState();
-
-  @override
-  List<Object> get props => [];
-}
+@immutable
+sealed class OnboardingState {}
 
 final class OnboardingInitial extends OnboardingState {}
+
+final class OnboardingPageState extends OnboardingState {
+  final int currentPage;
+  OnboardingPageState({required this.currentPage});
+}
+
+final class OnboardingCompleted extends OnboardingState {}
