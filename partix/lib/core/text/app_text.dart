@@ -46,6 +46,9 @@ parts around you.""";
   static const String subtotal = "Subtotal: \$";
   static const String checkout = "Checkout";
 
+  //Payment
+  static const String pay = "Payment";
+
   //favorites
   static const String favorites = "Favorites";
   static const String empty2 = "Favorites list is empty";
