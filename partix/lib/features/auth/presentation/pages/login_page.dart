@@ -65,7 +65,6 @@ class LoginPage extends StatelessWidget {
                                 child: CircularProgressIndicator(),
                               );
                             }
-
                             return Form(
                               key: bloc.formKey2,
                               child: LoginWidget(bloc: bloc),
