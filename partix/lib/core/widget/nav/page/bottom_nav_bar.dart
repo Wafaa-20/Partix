@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/core/text/app_text.dart';
-import 'package:partix/core/widget/nav/bloc/nav_bloc.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
+import 'package:partix/core/theme/app_palette.dart';
+import 'package:partix/core/widget/nav/bloc/nav_bloc.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});

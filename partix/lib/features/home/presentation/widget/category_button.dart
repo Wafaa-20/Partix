@@ -1,6 +1,5 @@
 // import the material package
 import 'package:flutter/material.dart';
-import 'package:partix/core/extension/git_size_screen.dart';
 import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 

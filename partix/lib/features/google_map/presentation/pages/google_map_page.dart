@@ -3,8 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:partix/core/text/app_text.dart';
+import 'package:partix/core/text/text_styles.dart';
+import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/features/google_map/presentation/bloc/google_map_bloc.dart';
 import 'package:partix/features/google_map/presentation/bloc/google_map_event.dart';
 import 'package:partix/features/google_map/presentation/bloc/google_map_state.dart';
@@ -28,7 +31,20 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
     return BlocProvider(
       create: (_) => MapBloc()..add(LoadUserLocation()),
       child: Scaffold(
-        appBar: AppBar(title: const Text('Choose a delivery location')),
+        appBar: AppBar(
+          backgroundColor: AppPalette.whiteLight3,
+          title: Text(
+            AppText.chooseDeliveryLocation,
+            style: TextStyles.sepro70015,
+          ),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: Icon(Icons.arrow_back_ios, color: AppPalette.blueColor),
+          ),
+        ),
         body: BlocBuilder<MapBloc, MapState>(
           builder: (context, state) {
             if (state.isLoading || state.selectedPosition == null) {
@@ -67,7 +83,8 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                     child: TextField(
                       controller: _searchController,
                       decoration: const InputDecoration(
-                        hintText: 'Search location',
+                        hintText: AppText.searchLocation,
+                        hintStyle: TextStyle(color: AppPalette.blackColor),
                         prefixIcon: Icon(Icons.search),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.all(12),
@@ -117,7 +134,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                             ),
                           ),
                           const Text(
-                            "Confirm Location",
+                            AppText.confirmLocation,
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
@@ -125,24 +142,36 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                           ),
                           const SizedBox(height: 12),
                           ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppPalette.orangeColor,
+                            ),
                             onPressed: () {
                               setState(() {
                                 _showAdditionalField = true;
                               });
                             },
-                            child: const Text("Confirm"),
+                            child: Text(
+                              AppText.confirm,
+                              style: TextStyles.sepro70040,
+                            ),
                           ),
                           if (_showAdditionalField) ...[
                             const SizedBox(height: 20),
-                            const Text("Additional Address Details"),
+                            const Text(AppText.additionalAddressDetails),
                             TextField(
                               controller: _additionalAddressController,
                               decoration: const InputDecoration(
-                                hintText: 'apartment-house number',
+                                hintText: AppText.apartmentHouseNumber,
+                                hintStyle: TextStyle(
+                                  color: AppPalette.blackColor,
+                                ),
                               ),
                             ),
                             const SizedBox(height: 16),
                             ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppPalette.orangeColor,
+                              ),
                               onPressed: () {
                                 Navigator.of(context).pop({
                                   'location': context
@@ -152,7 +181,10 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                                   'details': _additionalAddressController.text,
                                 });
                               },
-                              child: const Text("Save"),
+                              child: Text(
+                                AppText.save,
+                                style: TextStyles.sepro70040,
+                              ),
                             ),
                           ],
                         ],

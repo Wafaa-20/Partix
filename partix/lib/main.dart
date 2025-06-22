@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-
 import 'app.dart';
 import 'core/dependency_injection/setup.dart';
 
