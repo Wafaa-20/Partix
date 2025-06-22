@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/core/extension/navigation.dart';
-
-import 'package:partix/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:go_router/go_router.dart';
 import 'package:partix/features/splash/presentation/bloc/splash_bloc.dart';
 
 class SplashPage extends StatelessWidget {
@@ -16,9 +14,9 @@ class SplashPage extends StatelessWidget {
       child: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
           if (state is FirstTimeUseApp) {
-            context.customPushReplacement(OnboardingPage());
-          } else if (state is NotFirstTimeUseApp) {
-            context.customPushReplacement(OnboardingPage());
+            context.go('/onboarding');
+          } else {
+            context.go('/login');
           }
         },
         child: Scaffold(

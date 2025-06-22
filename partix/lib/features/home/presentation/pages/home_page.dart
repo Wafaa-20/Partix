@@ -183,6 +183,8 @@ class HomePage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final item = state.filteredItems[index];
                             return ItemCard(
+                              cartFunction: () =>
+                                  bloc.add(AddToCart(id: item['id'])),
                               image: item['image'],
                               title: item['title'],
                               category: item['category'],

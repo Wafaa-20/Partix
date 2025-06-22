@@ -32,7 +32,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
       create: (_) => MapBloc()..add(LoadUserLocation()),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppPalette.whiteLight3,
+          backgroundColor: AppPalette.whiteLight4,
           title: Text(
             AppText.chooseDeliveryLocation,
             style: TextStyles.sepro70015,
@@ -96,7 +96,9 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                             locations.first.latitude,
                             locations.first.longitude,
                           );
-                          context.read<MapBloc>().add(UpdateLocation(loc));
+                          if (context.mounted) {
+                            context.read<MapBloc>().add(UpdateLocation(loc));
+                          }
                           final controller = await _mapController.future;
                           controller.animateCamera(CameraUpdate.newLatLng(loc));
                         }
@@ -173,7 +175,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                                 backgroundColor: AppPalette.orangeColor,
                               ),
                               onPressed: () {
-                                Navigator.of(context).pop({
+                                context.pop({
                                   'location': context
                                       .read<MapBloc>()
                                       .state

@@ -8,8 +8,6 @@ class CategorySelected extends HomeEvent {
   CategorySelected(this.selectedLabel);
 }
 
-
-
 class LocationUpdated extends HomeEvent {
   final LatLng location;
   final String cityName;
@@ -21,4 +19,10 @@ class SearchEvant extends HomeEvent {
   final String search;
 
   SearchEvant({required this.search});
+}
+
+class AddToCart extends HomeEvent {
+  final int id;
+
+  AddToCart({required this.id});
 }
