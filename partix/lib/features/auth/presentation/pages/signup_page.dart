@@ -25,7 +25,7 @@ class SignupPage extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text("Signed up successfully!")),
                   );
-                  context.pushReplacement(Routes.home);
+                  context.pushReplacement(Routes.login);
                 } else if (state is AuthFailure) {
                   ScaffoldMessenger.of(
                     context,
