@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:partix/core/extension/git_size_screen.dart';
+import 'package:partix/core/extension/navigation.dart';
 import 'package:partix/core/text/app_text.dart';
 import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/theme/app_palette.dart';
 import 'package:partix/core/widget/button/custom_button.dart';
 import 'package:partix/features/card/presentation/bloc/card_bloc.dart';
+import 'package:partix/features/card/presentation/pages/payment_page.dart';
 import 'package:partix/features/card/presentation/widgets/cart_list_view.dart';
 
 class CardPage extends StatelessWidget {
@@ -52,9 +54,7 @@ class CardPage extends StatelessWidget {
                     height: 54,
                     width: context.getWidth() * 0.95,
                     onPressed: () {
-                      // context.push(
-
-                      // )
+                      context.customPush(PaymentPage());
                     },
                     child: Text(AppText.checkout, style: TextStyles.sepro50020),
                   ),

@@ -18,19 +18,28 @@ class SupabaseConnect {
 
   //Sign up With Email and password Method
   static Future<User> signUp({
+    required String name,
     required String email,
     required String password,
+    required String mobile,
   }) async {
     try {
       final userAuth = await supabase!.client.auth.signUp(
         email: email,
         password: password,
       );
-      if (userAuth.user == null) {
-        return userAuth.user!;
-      } else {
-        throw FormatException("user is exist");
+      final user = userAuth.user;
+
+      if (user == null) {
+        throw FormatException("User was not created.");
       }
+      await supabase!.client.from('users').insert({
+        'id': user.id,
+        'name': name,
+        'email': email,
+        'mobile': mobile,
+      });
+      return user;
     } on AuthException catch (e) {
       throw FormatException(e.message);
     } catch (e) {
@@ -59,5 +68,4 @@ class SupabaseConnect {
       throw FormatException("There is error with logIn");
     }
   }
-
 }

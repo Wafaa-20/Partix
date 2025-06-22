@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/core/extension/navigation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:partix/core/text/app_text.dart';
 import 'package:partix/core/text/text_styles.dart';
 import 'package:partix/core/widget/button/custom_text_button.dart';
-import 'package:partix/features/home/presentation/pages/home_page.dart';
 import 'package:partix/features/onboarding/data/models/onboarding_model.dart';
 import 'package:partix/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:partix/features/onboarding/presentation/widget/custom_smooth_page_indicator.dart';
+import 'package:partix/routes/app_routes.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -19,7 +19,7 @@ class OnboardingPage extends StatelessWidget {
       child: BlocConsumer<OnboardingBloc, OnboardingState>(
         listener: (context, state) {
           if (state is OnboardingCompleted) {
-            context.customPushReplacement(HomePage());
+            context.pushReplacement(Routes.login);
           }
         },
         builder: (context, state) {
@@ -46,7 +46,7 @@ class OnboardingPage extends StatelessWidget {
                           child: CustomTextButton(
                             text: AppText.skip,
                             onPressed: () {
-                              context.customPushReplacement(HomePage());
+                              context.pushReplacement(Routes.login);
                             },
                           ),
                         ),

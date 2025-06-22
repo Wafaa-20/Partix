@@ -1,5 +1,3 @@
-import 'package:partix/features/onboarding/domain/entities/onboarding.dart';
-
 abstract class Routes {
   static const favorites = _Paths.favorites;
   static const googleMap = _Paths.googleMap;
