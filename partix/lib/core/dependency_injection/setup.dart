@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:partix/core/service/local_storage.dart';
+import 'package:partix/features/auth/data/datasources/auth_layer.dart';
 
 Future<void> setup() async {
   // Register services
@@ -8,10 +9,5 @@ Future<void> setup() async {
     await localStorage.init();
     return localStorage;
   });
-
-  // Register blocs
-
-  // Register repositories
-
-  // Register data sources
+  GetIt.I.registerSingleton<AuthLayer>(AuthLayer());
 }

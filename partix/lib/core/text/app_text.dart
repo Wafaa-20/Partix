@@ -36,6 +36,8 @@ parts around you.""";
   static const String mobileNumber = "Mobile number";
   static const String hintmobileNumber = "Enter mobile number";
   static const String haveAccount = "Already have an account?";
+  static const String name = "Name";
+  static const String hintName = "Enter the name";
 
   //card
   static const String cart = "Cart";
