@@ -32,19 +32,20 @@ class FavoritesPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 168,
-                  child: CustomCard(
-                    color: AppPalette.whiteColor.withValues(alpha: 0.3),
-                    leftRadius: Radius.circular(15),
-                    child: Image.asset(
-                      "asset/image/monter.png",
-                      height: 135,
-                      fit: BoxFit.contain,
-                    ),
+                CustomPhotoCard(
+                  height: context.getHeight() * 0.15,
+                  width: context.getWidth() * 0.35,
+                  color: AppPalette.whiteColor.withValues(alpha: 0.3),
+                  leftRadius: Radius.circular(15),
+                  child: Image.asset(
+                    "asset/image/monter.png",
+                    height: 135,
+                    fit: BoxFit.contain,
                   ),
                 ),
-                CustomCard(
+                CustomPhotoCard(
+                  height: context.getHeight() * 0.15,
+                  width: context.getWidth() * 0.56,
                   rightRadius: Radius.circular(15),
                   child: Padding(
                     padding: const EdgeInsets.all(10),

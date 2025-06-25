@@ -101,7 +101,7 @@ parts around you.""";
       "image3": "asset/monitors_images/monitor2_2.png",
       "category": "mouses",
       "price": 6999.00,
-      "liked": true,
+      "liked": false,
       "screenDetails": """165Hz QHD Display – Ultra-smooth visuals
   with sharp resolution.""",
       "size": "32 QHD Curved (1000R)",

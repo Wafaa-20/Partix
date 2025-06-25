@@ -14,8 +14,6 @@ void main() async {
   OneSignal.Notifications.requestPermission(true);
   await OneSignal.login('2');
 
-
-
   LocationPermission permission = await Geolocator.checkPermission();
 
   if (permission == LocationPermission.denied ||

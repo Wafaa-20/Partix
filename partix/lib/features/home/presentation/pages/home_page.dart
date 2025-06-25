@@ -127,7 +127,19 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: context.getHeight() * 0.02),
+                  BlocListener<HomeBloc, HomeState>(
+                    listener: (context, state) {
+                      if (state is AddToCartSucessfuly) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Item added successfully'),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                      }
+                    },
+                    child: SizedBox(height: context.getHeight() * 0.02),
+                  ),
                   Container(
                     width: context.getWidth() * 0.85,
                     height: 35,
@@ -183,6 +195,8 @@ class HomePage extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final item = state.filteredItems[index];
                             return ItemCard(
+                              cartFunction: () =>
+                                  bloc.add(AddToCart(id: item['id'])),
                               image: item['image'],
                               title: item['title'],
                               category: item['category'],

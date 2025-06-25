@@ -22,3 +22,9 @@ class SearchEvant extends HomeEvent {
 
   SearchEvant({required this.search});
 }
+
+class AddToCart extends HomeEvent {
+  final int id;
+
+  AddToCart({required this.id});
+}

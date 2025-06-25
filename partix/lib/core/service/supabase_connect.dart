@@ -68,4 +68,54 @@ class SupabaseConnect {
       throw FormatException("There is error with logIn");
     }
   }
+
+  static Future<void> addToCart({
+    required int itemId,
+    required String category,
+    required double price,
+    required int quantity,
+  }) async {
+    int userId = 1;
+    print(itemId);
+    print(category);
+    print(price);
+    print(quantity);
+    try {
+      final response = await supabase!.client.from('cart').insert({
+        'item_id': itemId,
+        'category': category,
+        'price': price,
+        'quantity': quantity,
+        'user_id': userId,
+        'total': price,
+      }).select(); // optional if you want to get inserted row
+
+      if (response == null || response.isEmpty) {
+        throw Exception("Failed to add to cart.");
+      }
+    } catch (e) {
+      throw Exception("Error while adding to cart: $e");
+    }
+  }
+
+  static Future<List<Map<String, dynamic>>> getCartItems() async {
+    final response = await supabase!.client.from('cart').select('item_id,id');
+
+    return (response as List)
+        .map((row) => {'item_id': row['item_id'], 'id': row['id']})
+        .toList();
+  }
+
+  static Future<void> deleteCartItem(int cartId) async {
+    try {
+      final response = await supabase!.client
+          .from('cart')
+          .delete()
+          .eq('id', cartId);
+
+      print('تم حذف العنصر الذي معرفه $cartId من السلة');
+    } catch (e) {
+      print('خطأ في الحذف: $e');
+    }
+  }
 }
