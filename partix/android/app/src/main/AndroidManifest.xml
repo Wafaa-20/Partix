@@ -30,6 +30,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<<<<<<< HEAD
+=======
+             <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBEZ1zzMlMBxPkVO8Sf3x4FDDNNW_LSfqc"/>
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
@@ -42,4 +47,9 @@
             <data android:mimeType="text/plain"/>
         </intent>
     </queries>
+<<<<<<< HEAD
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 </manifest>

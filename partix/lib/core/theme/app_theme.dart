@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:partix/core/text/text_styles.dart';
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 import 'package:partix/core/theme/app_palette.dart';
 
 class AppTheme {
   static ThemeData theme = ThemeData(
     scaffoldBackgroundColor: AppPalette.blueColor,
+<<<<<<< HEAD
     appBarTheme: AppBarTheme(
       backgroundColor: AppPalette.blueColor,
       foregroundColor: AppPalette.whiteColor,
       //  centerTitle: true,
+=======
+    //App Bar
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppPalette.blueColor,
+      foregroundColor: AppPalette.whiteColor,
+      titleTextStyle: TextStyles.sepro40028,
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppPalette.whiteLight2,
@@ -38,6 +50,16 @@ class AppTheme {
     //   focusedBorder: _border(AppPalette.grayColor),
     //   enabledBorder: _border(AppPalette.grayColor),
     // ),
+<<<<<<< HEAD
+=======
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppPalette.whiteColor,
+      hintStyle: TextStyles.sepro30012,
+      focusedBorder: _border(AppPalette.blueColor3),
+      enabledBorder: _border(AppPalette.grayColor),
+    ),
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 
     //Text Button Theme
     textButtonTheme: TextButtonThemeData(
@@ -47,6 +69,12 @@ class AppTheme {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
     ),
+<<<<<<< HEAD
+=======
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(padding: EdgeInsets.zero),
+    ),
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
   );
   //Outline Input Border Method
   // static OutlineInputBorder _border(Color borderColor) {
@@ -54,4 +82,13 @@ class AppTheme {
   //     borderSide: BorderSide(color: AppPalette.lightGray2, width: 0.8),
   //   );
   // }
+<<<<<<< HEAD
+=======
+  static OutlineInputBorder _border(Color borderColor) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(color: AppPalette.grayLight, width: 0.8),
+    );
+  }
+>>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 }
