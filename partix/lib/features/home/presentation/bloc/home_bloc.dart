@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/features/home/presentation/bloc/home_event.dart';
-import 'package:partix/features/home/presentation/bloc/home_state.dart';
-
-class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(HomeInitial()) {
-    on<HomeEvent>((event, emit) {
-      // TODO: implement event handler
-=======
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:partix/core/service/supabase_connect.dart';
@@ -41,7 +31,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         orElse: () => throw Exception('Item not found'),
       );
 
-      // قراءة البيانات من العنصر
+      
       final category = item['category'] as String;
       final price = item['price'] as double;
       final quantity = 1;
@@ -62,7 +52,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       }).toList();
 
       emit(state.copyWith(filteredItems: results));
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
     });
   }
 }

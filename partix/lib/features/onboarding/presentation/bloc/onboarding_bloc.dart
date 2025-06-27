@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:partix/features/onboarding/presentation/bloc/onboarding_event.dart';
-import 'package:partix/features/onboarding/presentation/bloc/onboarding_state.dart';
-
-class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  OnboardingBloc() : super(OnboardingInitial()) {
-    on<OnboardingEvent>((event, emit) {
-      // TODO: implement event handler
-    });
-=======
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
@@ -66,6 +55,5 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   ) async {
     //   getItData.saveData(key: "isOnboardingVisited", value: true);
     emit(OnboardingCompleted());
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
   }
 }

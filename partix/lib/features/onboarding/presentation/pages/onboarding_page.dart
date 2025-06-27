@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partix/core/extension/navigation.dart';
@@ -12,21 +10,12 @@ import 'package:partix/features/home/presentation/pages/home_page.dart';
 import 'package:partix/features/onboarding/data/models/onboarding_model.dart';
 import 'package:partix/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:partix/features/onboarding/presentation/widget/custom_smooth_page_indicator.dart';
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Onboarding'),
-      ),
-      body: Center(
-        child: Text('Welcome to onboarding page!'),
-=======
     return BlocProvider(
       create: (context) => OnboardingBloc(),
       child: BlocConsumer<OnboardingBloc, OnboardingState>(
@@ -115,7 +104,6 @@ class OnboardingPage extends StatelessWidget {
             ),
           );
         },
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
       ),
     );
   }

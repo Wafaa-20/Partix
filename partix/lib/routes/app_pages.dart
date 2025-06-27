@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import 'package:partix/features/onboarding/presentation/pages/onboarding_page.dart';
-import 'package:partix/features/home/presentation/pages/home_page.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'app_routes.dart';
-
-=======
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:partix/core/widget/nav/page/bottom_nav_bar.dart';
@@ -20,15 +12,12 @@ import 'package:partix/features/profile/presentation/pages/profile_page.dart';
 import 'package:partix/features/splash/presentation/pages/splash_page.dart';
 
 import 'app_routes.dart';
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 
 final router = GoRouter(
   initialLocation: '/home',
   navigatorKey: GlobalNavigation.instance.navigatorKey,
   routes: [
     GoRoute(
-<<<<<<< HEAD
-=======
       name: Names.splash,
       path: Routes.splash,
       builder: (context, state) => const SplashPage(),
@@ -59,21 +48,10 @@ final router = GoRouter(
       builder: (context, state) => const LoginPage(),
     ),
     GoRoute(
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
       name: Names.onboarding,
       path: Routes.onboarding,
       builder: (context, state) => const OnboardingPage(),
     ),
-<<<<<<< HEAD
-
-    GoRoute(
-      name: Names.home,
-      path: Routes.home,
-      builder: (context, state) => const HomePage(),
-    ),
-
-
-=======
     GoRoute(
       name: Names.home,
       path: Routes.home,
@@ -84,7 +62,6 @@ final router = GoRouter(
       path: Routes.favorites,
       builder: (context, state) => const FavoritesPage(),
     ),
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
   ],
 );
 
@@ -94,7 +71,3 @@ class GlobalNavigation {
 
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356

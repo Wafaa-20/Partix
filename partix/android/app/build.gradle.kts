@@ -8,11 +8,7 @@ plugins {
 android {
     namespace = "com.example.partix"
     compileSdk = flutter.compileSdkVersion
-<<<<<<< HEAD
-    ndkVersion = flutter.ndkVersion
-=======
     ndkVersion = "27.0.12077973"
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

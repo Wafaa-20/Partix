@@ -1,15 +1,4 @@
 import 'package:equatable/equatable.dart';
-<<<<<<< HEAD
-
-sealed class HomeState extends Equatable {
-  const HomeState();
-
-  @override
-  List<Object> get props => [];
-}
-
-final class HomeInitial extends HomeState {}
-=======
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -48,4 +37,3 @@ class HomeState extends Equatable {
     filteredItems,
   ];
 }
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
