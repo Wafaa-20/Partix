@@ -37,3 +37,7 @@ class HomeState extends Equatable {
     filteredItems,
   ];
 }
+
+class AddToCartSucessfuly extends HomeState {
+  const AddToCartSucessfuly();
+}

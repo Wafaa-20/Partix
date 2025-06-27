@@ -14,3 +14,12 @@ final class ItemState extends CardState {
 
   const ItemState({required this.count});
 }
+
+final class CartItemsState extends CardState {
+  final List<Map<String, dynamic>> items;
+
+  const CartItemsState({required this.items});
+
+  @override
+  List<Object> get props => [items];
+}

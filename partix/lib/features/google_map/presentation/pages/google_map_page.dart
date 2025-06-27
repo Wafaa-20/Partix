@@ -32,7 +32,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
       create: (_) => MapBloc()..add(LoadUserLocation()),
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppPalette.whiteLight4,
+          backgroundColor: AppPalette.whiteLight3,
           title: Text(
             AppText.chooseDeliveryLocation,
             style: TextStyles.sepro70015,
@@ -96,9 +96,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                             locations.first.latitude,
                             locations.first.longitude,
                           );
-                          if (context.mounted) {
-                            context.read<MapBloc>().add(UpdateLocation(loc));
-                          }
+                          context.read<MapBloc>().add(UpdateLocation(loc));
                           final controller = await _mapController.future;
                           controller.animateCamera(CameraUpdate.newLatLng(loc));
                         }
@@ -107,7 +105,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                   ),
                 ),
 
-                
+                // Draggable Bottom Sheet
                 DraggableScrollableSheet(
                   initialChildSize: 0.1,
                   minChildSize: 0.1,
@@ -175,7 +173,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
                                 backgroundColor: AppPalette.orangeColor,
                               ),
                               onPressed: () {
-                                context.pop({
+                                Navigator.of(context).pop({
                                   'location': context
                                       .read<MapBloc>()
                                       .state

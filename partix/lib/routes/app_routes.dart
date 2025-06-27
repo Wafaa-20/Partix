@@ -16,6 +16,7 @@ abstract class Routes {
 
 abstract class _Paths {
   static const favorites = '/favorites';
+
   static const googleMap = '/google_map';
   static const itemDetails = '/item_details';
   static const profile = '/profile';
@@ -30,6 +31,7 @@ abstract class _Paths {
 
 abstract class _Names {
   static const favorites = 'favorites';
+
   static const googleMap = 'google_map';
   static const itemDetails = 'item_details';
   static const profile = 'profile';

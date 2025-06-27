@@ -11,7 +11,7 @@ part 'onboarding_state.dart';
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   final PageController controller = PageController();
   int currentPage = 0;
-  // final getItData = GetIt.I.get<LocalStorage>();
+  //final getItData = GetIt.I.get<LocalStorage>();
 
   OnboardingBloc() : super(OnboardingInitial()) {
     on<OnboardingEvent>((event, emit) {});
@@ -53,7 +53,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     CompleteOnboardingEvent event,
     Emitter<OnboardingState> emit,
   ) async {
-    //   getItData.saveData(key: "isOnboardingVisited", value: true);
     emit(OnboardingCompleted());
   }
 }

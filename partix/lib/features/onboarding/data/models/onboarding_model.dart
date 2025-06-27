@@ -1,5 +1,4 @@
 import 'package:partix/core/text/app_text.dart';
-import 'package:partix/features/onboarding/domain/entities/onboarding.dart';
 
 class OnboardingModel {
   final String image;
@@ -11,10 +10,6 @@ class OnboardingModel {
     required this.title,
     required this.subTitle,
   });
-
-  Onboarding toEntity() {
-    return Onboarding(image: image, title: title, subTitle: subTitle);
-  }
 }
 
 List<OnboardingModel> onboardingData = [

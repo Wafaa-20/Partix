@@ -10,6 +10,7 @@ import 'package:partix/features/home/presentation/pages/home_page.dart';
 import 'package:partix/features/onboarding/data/models/onboarding_model.dart';
 import 'package:partix/features/onboarding/presentation/bloc/onboarding_bloc.dart';
 import 'package:partix/features/onboarding/presentation/widget/custom_smooth_page_indicator.dart';
+import 'package:partix/routes/app_routes.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({super.key});
@@ -21,7 +22,7 @@ class OnboardingPage extends StatelessWidget {
       child: BlocConsumer<OnboardingBloc, OnboardingState>(
         listener: (context, state) {
           if (state is OnboardingCompleted) {
-            context.go('/lgoin');
+            context.pushReplacement(Routes.login);
           }
         },
         builder: (context, state) {
@@ -48,7 +49,7 @@ class OnboardingPage extends StatelessWidget {
                           child: CustomTextButton(
                             text: AppText.skip,
                             onPressed: () {
-                              context.go('/login');
+                              context.pushReplacement(Routes.login);
                             },
                           ),
                         ),

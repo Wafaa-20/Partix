@@ -7,6 +7,7 @@ import 'package:partix/core/widget/button/custom_button.dart';
 import 'package:partix/core/widget/button/custom_text_button.dart';
 import 'package:partix/core/widget/custom_text_field.dart';
 import 'package:partix/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:partix/features/auth/presentation/bloc/auth_event.dart';
 import 'package:partix/features/auth/presentation/widgets/custom_divider.dart';
 import 'package:partix/features/auth/presentation/widgets/social_auth.dart';
 import 'package:partix/routes/app_routes.dart';
@@ -49,7 +50,9 @@ class LoginWidget extends StatelessWidget {
           SizedBox(height: 28),
           Center(
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                bloc.add(LogInEvent());
+              },
               child: Text(AppText.login, style: TextStyles.sepro70020),
             ),
           ),

@@ -19,11 +19,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(state.copyWith(selectedLabel: event.selectedLabel));
     });
 
-    on<LocationUpdated>((event, emit) {
-      emit(
-        state.copyWith(userLocation: event.location, cityName: event.cityName),
-      );
-    });
     on<AddToCart>((event, emit) {
       final itemId = event.id;
       final item = AppText.itemList.firstWhere(
@@ -31,7 +26,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         orElse: () => throw Exception('Item not found'),
       );
 
-      
       final category = item['category'] as String;
       final price = item['price'] as double;
       final quantity = 1;
@@ -41,9 +35,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         price: price,
         quantity: quantity,
       );
-
-      emit(state.copyWith());
+      emit(AddToCartSucessfuly());
+      emit(state.copyWith(filteredItems: AppText.itemList));
     });
+    on<LocationUpdated>((event, emit) {
+      emit(
+        state.copyWith(userLocation: event.location, cityName: event.cityName),
+      );
+    });
+
     on<SearchEvant>((event, emit) {
       final query = event.search.toLowerCase();
       final results = AppText.itemList.where((item) {

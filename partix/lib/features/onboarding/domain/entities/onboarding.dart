@@ -1,15 +1,14 @@
 import 'package:equatable/equatable.dart';
 
 class Onboarding extends Equatable {
-  final String image;
-  final String title;
-  final String subTitle;
+  final String id;
+  final String name;
+
   const Onboarding({
-    required this.image,
-    required this.title,
-    required this.subTitle,
+    required this.id,
+    required this.name,
   });
 
   @override
-  List<Object> get props => [image, title, subTitle];
+  List<Object> get props => [id, name];
 }

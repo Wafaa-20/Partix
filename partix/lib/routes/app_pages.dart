@@ -14,13 +14,18 @@ import 'package:partix/features/splash/presentation/pages/splash_page.dart';
 import 'app_routes.dart';
 
 final router = GoRouter(
-  initialLocation: '/home',
+  initialLocation: '/login',
   navigatorKey: GlobalNavigation.instance.navigatorKey,
   routes: [
     GoRoute(
       name: Names.splash,
       path: Routes.splash,
       builder: (context, state) => const SplashPage(),
+    ),
+    GoRoute(
+      name: Names.favorites,
+      path: Routes.favorites,
+      builder: (context, state) => const FavoritesPage(),
     ),
     GoRoute(
       name: Names.profile,
@@ -32,11 +37,13 @@ final router = GoRouter(
       path: Routes.googleMap,
       builder: (context, state) => const GoogleMapPage(),
     ),
+
     GoRoute(
       name: Names.card,
       path: Routes.card,
       builder: (context, state) => const CardPage(),
     ),
+
     GoRoute(
       name: Names.signup,
       path: Routes.signup,
@@ -47,20 +54,17 @@ final router = GoRouter(
       path: Routes.login,
       builder: (context, state) => const LoginPage(),
     ),
+
     GoRoute(
       name: Names.onboarding,
       path: Routes.onboarding,
       builder: (context, state) => const OnboardingPage(),
     ),
+
     GoRoute(
       name: Names.home,
       path: Routes.home,
       builder: (context, state) => const BottomNavBar(),
-    ),
-    GoRoute(
-      name: Names.favorites,
-      path: Routes.favorites,
-      builder: (context, state) => const FavoritesPage(),
     ),
   ],
 );

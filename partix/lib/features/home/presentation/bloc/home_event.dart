@@ -8,6 +8,8 @@ class CategorySelected extends HomeEvent {
   CategorySelected(this.selectedLabel);
 }
 
+
+
 class LocationUpdated extends HomeEvent {
   final LatLng location;
   final String cityName;

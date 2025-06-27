@@ -36,6 +36,8 @@ parts around you.""";
   static const String mobileNumber = "Mobile number";
   static const String hintmobileNumber = "Enter mobile number";
   static const String haveAccount = "Already have an account?";
+  static const String name = "Name";
+  static const String hintName = "Enter the name";
 
   //card
   static const String cart = "Cart";
@@ -43,6 +45,9 @@ parts around you.""";
   static const String shop = "Shop now";
   static const String subtotal = "Subtotal: \$";
   static const String checkout = "Checkout";
+
+  //Payment
+  static const String pay = "Payment";
 
   //favorites
   static const String favorites = "Favorites";
@@ -96,7 +101,7 @@ parts around you.""";
       "image3": "asset/monitors_images/monitor2_2.png",
       "category": "mouses",
       "price": 6999.00,
-      "liked": true,
+      "liked": false,
       "screenDetails": """165Hz QHD Display – Ultra-smooth visuals
   with sharp resolution.""",
       "size": "32 QHD Curved (1000R)",

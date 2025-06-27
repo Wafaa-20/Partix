@@ -3,12 +3,8 @@
          the Flutter tool needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->
-<<<<<<< HEAD
-    <uses-permission android:name="android.permission.INTERNET"/>
-=======
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 </manifest>

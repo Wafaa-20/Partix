@@ -9,9 +9,10 @@ part 'splash_event.dart';
 part 'splash_state.dart';
 
 class SplashBloc extends Bloc<SplashEvent, SplashState> {
-  final getItData = GetIt.I.get<LocalStorage>();
+  //final getItData = GetIt.I.get<LocalStorage>();
 
   SplashBloc() : super(SplashInitial()) {
+    on<SplashEvent>((event, emit) {});
     on<CheckFirstTimeUserEvent>(checkApp);
   }
 
@@ -21,13 +22,6 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   ) async {
     await Future.delayed(Duration(seconds: 3));
 
-    final result = await getItData.getData(key: 'isOnboardingVisited');
-    final bool isDownloaded = result == true || result == 'true';
-
-    if (isDownloaded) {
-      emit(NotFirstTimeUseApp());
-    } else {
-      emit(FirstTimeUseApp());
-    }
+    emit(NotFirstTimeUseApp());
   }
 }
