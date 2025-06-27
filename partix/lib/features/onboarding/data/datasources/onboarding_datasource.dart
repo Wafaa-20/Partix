@@ -1,4 +1,6 @@
+import 'package:partix/core/text/app_text.dart';
 import 'package:partix/features/onboarding/data/models/onboarding_model.dart';
+import 'package:partix/core/text/app_text.dart';
 
 abstract class OnboardingDatasource {
   Future<OnboardingModel> getOnboarding();
@@ -7,11 +9,10 @@ abstract class OnboardingDatasource {
 class OnboardingDatasourceImpl implements OnboardingDatasource {
   @override
   Future<OnboardingModel> getOnboarding() async {
-    // TODO: implement actual data source logic
-    // This is just a placeholder implementation
     return OnboardingModel(
-      id: '1',
-      name: 'Onboarding Name',
+      image: 'assets/images/onboarding1.png',
+      title: AppText.title1,
+      subTitle: AppText.subTitle1,
     );
   }
 }

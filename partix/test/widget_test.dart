@@ -8,12 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-<<<<<<< HEAD
-import 'package:partix/main.dart';
-import '../lib/app.dart';
-=======
 import 'package:partix/app.dart';
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

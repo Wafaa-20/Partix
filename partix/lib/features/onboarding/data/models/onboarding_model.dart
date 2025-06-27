@@ -1,38 +1,5 @@
-<<<<<<< HEAD
-import 'package:partix/features/onboarding/domain/entities/onboarding.dart';
-
-class OnboardingModel {
-  final String id;
-  final String name;
-
-  OnboardingModel({
-    required this.id,
-    required this.name,
-  });
-
-  factory OnboardingModel.fromJson(Map<String, dynamic> json) {
-    return OnboardingModel(
-      id: json['id'],
-      name: json['name'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-    };
-  }
-
-  Onboarding toEntity() {
-    return Onboarding(
-      id: id,
-      name: name,
-    );
-  }
-}
-=======
 import 'package:partix/core/text/app_text.dart';
+import 'package:partix/features/onboarding/domain/entities/onboarding.dart';
 
 class OnboardingModel {
   final String image;
@@ -44,6 +11,10 @@ class OnboardingModel {
     required this.title,
     required this.subTitle,
   });
+
+  Onboarding toEntity() {
+    return Onboarding(image: image, title: title, subTitle: subTitle);
+  }
 }
 
 List<OnboardingModel> onboardingData = [
@@ -63,4 +34,3 @@ List<OnboardingModel> onboardingData = [
     subTitle: AppText.subTitle3,
   ),
 ];
->>>>>>> 7e586c6f35f805f76aa6314b480c890d2c6b2356
